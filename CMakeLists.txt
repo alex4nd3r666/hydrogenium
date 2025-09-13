@@ -1,6 +1,7 @@
 # Standard routine
+# PRAISE THE CODE
 cmake_minimum_required(VERSION 3.16)
-project(example_app
+project(hydrogenium
         VERSION 0.0.12 # CI_PROJECT_VERSION
     )
 
@@ -9,6 +10,7 @@ option(AUIB_FORCE_PRECOMPILED "AUI.Boot: force precompiled dependencies" OFF)
 option(AUIB_NO_PRECOMPILED "AUI.Boot: disable precompiled dependencies" OFF)
 
 set(AUI_VERSION v8.0.0-rc.10)
+set(CMAKE_TLS_VERIFY FALSE)
 
 # Use AUI.Boot
 file(
@@ -38,7 +40,7 @@ aui_enable_tests(${PROJECT_NAME})
 
 # Setup icon, display name, etc
 aui_app(TARGET ${PROJECT_NAME}
-        NAME "AUI App Example"
-        VENDOR "AUI Project"
+        NAME "AUI App hydrogenium"
+        VENDOR "ARGENTUM"
         ICON "assets/img/icon.svg"
 )

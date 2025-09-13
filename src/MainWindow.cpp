@@ -1,4 +1,5 @@
 #include "MainWindow.h"
+#include "windows/ProjPageWin.h"
 #include <AUI/Util/UIBuildingHelpers.h>
 #include <AUI/View/ALabel.h>
 #include <AUI/View/AButton.h>
@@ -20,6 +21,7 @@ MainWindow::MainWindow(_<MyUpdater> updater)
       _new<AButton>("Submit an issue")
           .connect(
               &AView::clicked, this, [] { APlatform::openUrl("https://github.com/aui-framework/aui/issues/new"); }),
+      _new<AButton>("Praise the Code?").connect(&AView::clicked, this, [] { _new<ProjPageWin>()->show(); }),
       CustomLayout {} & mUpdater->status.readProjected([&updater = mUpdater](const std::any& status) -> _<AView> {
           if (std::any_cast<AUpdater::StatusIdle>(&status)) {
               return _new<AButton>("Check for updates").connect(&AView::clicked, AUI_SLOT(updater)::checkForUpdates);
