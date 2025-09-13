@@ -1,5 +1,6 @@
 #include <AUI/Platform/Entry.h>
 #include "MainWindow.h"
+#include "windows/ProjPageWin.h"
 #include "MyUpdater.h"
 
 AUI_ENTRY {
