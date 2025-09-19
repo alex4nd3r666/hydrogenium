@@ -5,9 +5,9 @@
 
 class ProjPageWin : public AWindow {
 public:
+    ProjPageWin();
 
 
 
-private:
 
 };
